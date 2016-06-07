@@ -1,0 +1,52 @@
+body {
+  background-image: url(Background.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+header {
+  margin-right: auto;
+  margin-left: 550px;
+}
+img {
+    height: 50% ;
+    width:  50% ;
+}
+
+section {
+    margin-top: 0px;
+    margin-right:200px ;
+    margin-left: 200px ;
+    margin-bottom: 75px;
+    text-align: center;
+    background-color: #F0F2F5;
+    height: 800px;
+    background-color: white;
+    border: 2px black;
+    border-radius: 50px;
+
+  }
+#qImage {
+  height: 75%;
+  width: 75%;
+}
+
+h1{
+font-size: 32px;
+}
+  p {
+    font-size: 32px;
+    text-align: justify;
+    display:inline-block;
+    margin-right: 200px;
+    margin-left: 200px;
+    padding-top: -75px;
+    /*padding-bottom: 15px;*/
+}
+
+form {
+  text-align: center;
+  font-size: 28px;
+  margin-left: 200px;
+  display:inline-block;
+}
