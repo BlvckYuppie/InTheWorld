@@ -77,14 +77,14 @@ $(document).ready(function() {
     var moveAnswerC = pushQNA.answerButtonThree.html(quiz[counter].answerC);
     var moveAnswerD = pushQNA.answerButtonFour.html(quiz[counter].answerD);
     counter +=1;
-    $("input:radio:checked").each(function(){
-      userAnswers.push($(this).val());
+      userAnswers.push($("input:radio:checked").val());
+      if 
+
 debugger;
     });
   });
+// });
 // };
-// };
-});
-// // write code that  stores user answer in array for later use. done
+// // write code that  stores user answer in array for later use.
 // // write code that compares user anwers to correct answer and spits out x/x string based on performance.
 // // Fin... Drink mad beer
