@@ -35,7 +35,7 @@ h1{
 font-size: 32px;
 }
   p {
-    font-size: 32px;
+    font-size: 28px;
     text-align: justify;
     display:inline-block;
     margin-right: 200px;
@@ -46,7 +46,7 @@ font-size: 32px;
 
 form {
   text-align: center;
-  font-size: 28px;
-  margin-left: 200px;
+  font-size: 25px;
+  margin-left: 100px;
   display:inline-block;
 }
