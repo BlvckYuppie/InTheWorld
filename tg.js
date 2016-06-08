@@ -28,7 +28,7 @@ $(document).ready(function() {
       answerB: "Vauxhall Astra VXR (RH Edition)",
       answerC: "Pagani Zonda",
       answerD: "Ferrari 458 Italia",
-      correctAnswer: "Pagani Zonda",
+      correctAnswer: "answerA",
     },
     {
       questionHead: "The Top Gear Test Track is a former WWII airfield.",
@@ -58,9 +58,14 @@ $(document).ready(function() {
     answerButtonFour: $("#buttonFour"),
     nextButton: $("#nextButton"),
   };
-  var userAnswers = [];
-  var right = { answers: [quiz.answerA, quiz.answerC, quiz.answerC, quiz.AnswerD, quiz.AnswerA];
+  var right = { answers: [quiz.answerA, quiz.answerC, quiz.answerC, quiz.AnswerD, quiz.AnswerA]};
   var answers = right.answers;
+/*var answerButtons = [
+answerButtonOne,
+answerButtonTwo,
+answerButtonThree,
+answerButtonFour,
+];*/
 
 /*var answerButtons = [
 answerButtonOne,
@@ -83,7 +88,12 @@ answerButtonFour,
     var moveAnswerD = pushQNA.answerButtonFour.html(quiz[counter].answerD);
       counter +=1;
   });
- pushQNA.
+  pushQNA.nextButton.click(function(){
+    var userAnswers = [];
+      ("input:radio:checked").each(function(){
+        userAnswers.push($(this).val());
+        debugger;
+    });
 });
 // write code that  stores user answer in array for later use.
 // write code that compares user anwers to correct answer and spits out x/x string based on performance.
