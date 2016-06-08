@@ -1,5 +1,5 @@
 $(document).ready(function() {
-// write code to set global variables for questions + sets htmml elements to interact with dom.
+  // write code to set global variables for questions + sets htmml elements to interact with dom.
   var quiz = [
     {
       questionHead: "On Top Gear series 8 episode 1, whom from the Top Gear team is responsible for this quote? ",
@@ -60,24 +60,14 @@ $(document).ready(function() {
   };
   var right = { answers: [quiz.answerA, quiz.answerC, quiz.answerC, quiz.AnswerD, quiz.AnswerA]};
   var answers = right.answers;
-/*var answerButtons = [
-answerButtonOne,
-answerButtonTwo,
-answerButtonThree,
-answerButtonFour,
-];*/
-
-/*var answerButtons = [
-answerButtonOne,
-answerButtonTwo,
-answerButtonThree,
-answerButtonFour,
-];*/
-
-
-// write code that prevents default click functionality + appends questions + answers to Qbox1, qbox2 and answer radio button dom elements on click
-// use switch statement,
+  var userAnswers = [];
   var counter = 0
+
+// while (counter < quiz.length) {
+//   if (quiz.length = 0) {
+//     continue;
+//   }
+//   else if (quiz.length > 0) {
   pushQNA.nextButton.click(function(a){
     a.preventDefault();
     var moveHead = pushQNA.questionBoxOne.html(quiz[counter].questionHead);
@@ -86,15 +76,15 @@ answerButtonFour,
     var moveAnswerB = pushQNA.answerButtonTwo.html(quiz[counter].answerB);
     var moveAnswerC = pushQNA.answerButtonThree.html(quiz[counter].answerC);
     var moveAnswerD = pushQNA.answerButtonFour.html(quiz[counter].answerD);
-      counter +=1;
-  });
-  pushQNA.nextButton.click(function(){
-    var userAnswers = [];
-      ("input:radio:checked").each(function(){
-        userAnswers.push($(this).val());
-        debugger;
+    counter +=1;
+    $("input:radio:checked").each(function(){
+      userAnswers.push($(this).val());
+debugger;
     });
+  });
+// };
+// };
 });
-// write code that  stores user answer in array for later use.
-// write code that compares user anwers to correct answer and spits out x/x string based on performance.
-// Fin... Drink mad beer
+// // write code that  stores user answer in array for later use. done
+// // write code that compares user anwers to correct answer and spits out x/x string based on performance.
+// // Fin... Drink mad beer
