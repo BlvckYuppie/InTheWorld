@@ -58,17 +58,18 @@ $(document).ready(function() {
     answerButtonFour: $("#buttonFour"),
     nextButton: $("#nextButton"),
   };
-  var right = { answers: [quiz.answerA, quiz.answerC, quiz.answerC, quiz.AnswerD, quiz.AnswerA]};
-  var answers = right.answers;
+
+  var answers = []
   var userAnswers = [];
   var counter = 0
-
-// while (counter < quiz.length) {
+  var tally = 0
+// while (counter < 5) {
 //   if (quiz.length = 0) {
 //     continue;
 //   }
 //   else if (quiz.length > 0) {
-  pushQNA.nextButton.click(function(a){
+  var pushEverything = pushQNA.nextButton.click(function(a){
+
     a.preventDefault();
     var moveHead = pushQNA.questionBoxOne.html(quiz[counter].questionHead);
     var moveBody = pushQNA.questionBoxTwo.html(quiz[counter].questionBody);
@@ -78,11 +79,15 @@ $(document).ready(function() {
     var moveAnswerD = pushQNA.answerButtonFour.html(quiz[counter].answerD);
     counter +=1;
       userAnswers.push($("input:radio:checked").val());
-      if 
-
-debugger;
+      if ($("input:radio:checked").val() == quiz[counter].correctAnswer) {
+        tally +=1
+      };
+      return pushEverything;
+      
     });
+
   });
+
 // });
 // };
 // // write code that  stores user answer in array for later use.
