@@ -53,30 +53,30 @@ $(document).ready(function() {
   var pushQNA = {
     questionBoxOne: $("#questionBoxOne"),
     questionBoxTwo: $("#questionBoxTwo"),
-    imgBoxOne: $("#imgBoxeOne"),
+    imgBoxOne: $("#imgBoxOne"),
     answerButtonOne: $("#buttonOne"),
     answerButtonTwo: $("#buttonTwo"),
     answerButtonThree: $("#buttonThree"),
     answerButtonFour: $("#buttonFour"),
     nextButton: $("#nextButton"),
   };
- var conclusion = [
-   $(".looser"),
-   $(".alright"),
-   $(".winner") ,
+  var conclusion = [
+    $(".looser"),
+    $(".alright"),
+    $(".winner") ,
 
- ]
+  ]
   var answers = [];
   answers.push(undefined);
   var userAnswers = [];
-  var counter = 0
-  var tally = 0
+  var counter = 0;
+  var tally = 0;
 
   placeNewQuestion();
 
   var pushEverything = pushQNA.nextButton.click(function(a){
     a.preventDefault()
-    console.log(counter,quiz.length);
+    // console.log(counter,quiz.length);
     if(counter == quiz.length -1){
       displayWinner();
     }
@@ -93,25 +93,29 @@ $(document).ready(function() {
     var moveAnswerB = pushQNA.answerButtonTwo.html(quiz[counter].answerB);
     var moveAnswerC = pushQNA.answerButtonThree.html(quiz[counter].answerC);
     var moveAnswerD = pushQNA.answerButtonFour.html(quiz[counter].answerD);
+    debugger;
   }
 
   function checkAnswer(){
     var userInput = $("input[type=radio]:checked").val();
     var correctAnswer = quiz[counter].correctAnswer;
 
-    console.log(userInput + " " + correctAnswer)
+    // console.log(userInput + " " + correctAnswer)
     answers.push(correctAnswer);
     counter +=1;
     userAnswers.push(userInput);
     if (userInput == correctAnswer){
       console.log(tally)
       tally +=1;
-       debugger;
+      debugger;
     };
   }
   function displayWinner() {
-    if (tally <= 2) {
-      pushQNA.imgBoxOne.addClass("looser");
+    if (tally <= 3) {
+      pushQNA.imgBoxOne.addClass("alright");
+  }
+    else if(tally >= 4) {
+      pushQNA.imgBoxOne.addClass("winner");
     }
   }
 });

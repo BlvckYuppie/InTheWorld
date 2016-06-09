@@ -20,7 +20,8 @@ section {
     margin-bottom: 75px;
     text-align: center;
     background-color: #F0F2F5;
-    height: 800px;
+    height: 700px;
+    width : 1200px;
     background-color: white;
     border: 2px black;
     border-radius: 50px;
@@ -36,10 +37,7 @@ font-size: 30px;
 font-style: oblique;
 
 }
-h3 {
-  height:281 px;
-  width: :500 px
-}
+
   p {
     font-size: 28px;
     text-align: justify;
@@ -55,7 +53,7 @@ form {
   font-size: 25px;
   margin-left: 100px;
   display:inline-block;
-  padding-top: 100px;
+  padding-top: -100px;
 }
 .looser {
   background-image: url(terrible.gif);
