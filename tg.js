@@ -47,40 +47,73 @@ $(document).ready(function() {
       answerC: "South Bound",
       answerD: "Seven Turns",
       correctAnswer: "answerA",
-    },
+    }
+
   ];
   var pushQNA = {
     questionBoxOne: $("#questionBoxOne"),
     questionBoxTwo: $("#questionBoxTwo"),
+    imgBoxOne: $("#imgBoxeOne"),
     answerButtonOne: $("#buttonOne"),
     answerButtonTwo: $("#buttonTwo"),
     answerButtonThree: $("#buttonThree"),
     answerButtonFour: $("#buttonFour"),
     nextButton: $("#nextButton"),
   };
+ var conclusion = [
+   $(".looser"),
+   $(".alright"),
+   $(".winner") ,
 
+ ]
   var answers = [];
   answers.push(undefined);
   var userAnswers = [];
   var counter = 0
   var tally = 0
-  var pushEverything = pushQNA.nextButton.click(function(a){
 
-    a.preventDefault();
+  placeNewQuestion();
+
+  var pushEverything = pushQNA.nextButton.click(function(a){
+    a.preventDefault()
+    console.log(counter,quiz.length);
+    if(counter == quiz.length -1){
+      displayWinner();
+    }
+    else {
+      checkAnswer();
+      placeNewQuestion();
+    }
+  });
+
+  function placeNewQuestion(){
     var moveHead = pushQNA.questionBoxOne.html(quiz[counter].questionHead);
     var moveBody = pushQNA.questionBoxTwo.html(quiz[counter].questionBody);
     var moveAnswerA = pushQNA.answerButtonOne.html(quiz[counter].answerA);
     var moveAnswerB = pushQNA.answerButtonTwo.html(quiz[counter].answerB);
     var moveAnswerC = pushQNA.answerButtonThree.html(quiz[counter].answerC);
     var moveAnswerD = pushQNA.answerButtonFour.html(quiz[counter].answerD);
-    answers.push(quiz[counter].correctAnswer);
+  }
+
+  function checkAnswer(){
+    var userInput = $("input[type=radio]:checked").val();
+    var correctAnswer = quiz[counter].correctAnswer;
+
+    console.log(userInput + " " + correctAnswer)
+    answers.push(correctAnswer);
     counter +=1;
-    userAnswers.push($("input:radio:checked").val());
-    if ($("input:radio:checked").val() == answers){
+    userAnswers.push(userInput);
+    if (userInput == correctAnswer){
       console.log(tally)
       tally +=1;
+       debugger;
     };
-  });
+  }
+  function displayWinner() {
+    if (tally <= 2) {
+      pushQNA.imgBoxOne.addClass("looser");
+    }
+  }
 });
 // });
 // };
