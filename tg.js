@@ -81,6 +81,7 @@ $(document).ready(function() {
     if ($("input:radio:checked").val() == answers){
       console.log(tally)
       tally +=1;
+      return pushEverything;
     };
   });
 }
