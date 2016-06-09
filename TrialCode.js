@@ -8,7 +8,7 @@ $(document).ready(function() {
       answerB: "Richard Hammond",
       answerC: "James May",
       answerD: "The Stig",
-      correctAnswer: "answerA",
+      correctAnswer: "Jeremy Clarson",
       // Or... AnswerOne: ["Jeremy Clarkson","Richard Hammond","James May", "The Stig",],
     },
     {
@@ -18,7 +18,7 @@ $(document).ready(function() {
       answerB: "Simon Cowell",
       answerC: "Matt Leblanc",
       answerD: "Tom Cruise",
-      correctAnswer: "answerC",
+      correctAnswer: "Matt Leblanc",
       // or... AnswerTwo: ["Rowan Atkinson", "Simon Cowell", "Matt Leblanc", "Tom Cruise"],
     },
     {
@@ -28,7 +28,7 @@ $(document).ready(function() {
       answerB: "Vauxhall Astra VXR (RH Edition)",
       answerC: "Pagani Zonda",
       answerD: "Ferrari 458 Italia",
-      correctAnswer: "answerC",
+      correctAnswer: "answerA",
     },
     {
       questionHead: "The Top Gear Test Track is a former WWII airfield.",
@@ -37,7 +37,7 @@ $(document).ready(function() {
       answerB: "McLaren",
       answerC: "Williams",
       answerD: "Lotus",
-      correctAnswer: "answerD",
+      correctAnswer: "Lotus",
     },
     {
       questionHead: "Since the very first episode in 1977...",
@@ -46,7 +46,7 @@ $(document).ready(function() {
       answerB: "Ramblin' Man",
       answerC: "South Bound",
       answerD: "Seven Turns",
-      correctAnswer: "answerA",
+      correctAnswer: "Jessica"
     },
   ];
   var pushQNA = {
@@ -59,13 +59,17 @@ $(document).ready(function() {
     nextButton: $("#nextButton"),
   };
 
-  var answers = [];
-  answers.push(undefined);
+  var answers = [""]
   var userAnswers = [];
   var counter = 0
-  var tally = 0
-  var pushEverything = pushQNA.nextButton.click(function(a){
 
+// while (counter < 5) {
+//   if (quiz.length = 0) {
+//     continue;
+//   }
+//   else if (quiz.length > 0) {
+  pushQNA.nextButton.click(function(a){
+    console.log("here");
     a.preventDefault();
     var moveHead = pushQNA.questionBoxOne.html(quiz[counter].questionHead);
     var moveBody = pushQNA.questionBoxTwo.html(quiz[counter].questionBody);
@@ -73,15 +77,38 @@ $(document).ready(function() {
     var moveAnswerB = pushQNA.answerButtonTwo.html(quiz[counter].answerB);
     var moveAnswerC = pushQNA.answerButtonThree.html(quiz[counter].answerC);
     var moveAnswerD = pushQNA.answerButtonFour.html(quiz[counter].answerD);
-    answers.push(quiz[counter].correctAnswer);
-    counter +=1;
-    userAnswers.push($("input:radio:checked").val());
-    if ($("input:radio:checked").val() == answers){
-      console.log(tally)
-      tally +=1;
-    };
+      userAnswers.push($("input:radio:checked").val());
+      if ($("input:radio:checked").val() == quiz[counter].correctAnswer) {
+        console.log("correct")
+      }
+        else {
+          console.log("incorrect")
+
+      }
+      // answers.push(quiz.[counter].correctAnswer);
+      counter +=1;
+// var tally = function {
+//  answers.not.userAnswers.length;
+//  return tally;
+//
+//   if (tally = 1) {
+//   pushQNA.questionBoxTwo.html("#yousuckimage");
+// }
+//   else if (tally = "2") {
+//     pushQNA.questionBoxTwo.html("#yousucklessimage");
+//   }
+//   else if (tally = "3") {
+//     pushQNA.questionBoxTwo.html("#youMayWatchTheShowimage");
+//   }
+//   else if (tally = "4") {
+//     pushQNA.questionBoxTwo.html("#youdefinitelywatchtheshow");
+//   }
+//   else if (tally ="5") {
+//     pushQNA.questionBoxTwo.html("#youronthecoolwall");
+debugger;
+    });
   });
-});
+
 // });
 // };
 // // write code that  stores user answer in array for later use.
