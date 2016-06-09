@@ -64,6 +64,8 @@ $(document).ready(function() {
   var userAnswers = [];
   var counter = 0
   var tally = 0
+
+  while (counter < 5) {
   var pushEverything = pushQNA.nextButton.click(function(a){
 
     a.preventDefault();
@@ -81,6 +83,7 @@ $(document).ready(function() {
       tally +=1;
     };
   });
+}
 });
 // });
 // };

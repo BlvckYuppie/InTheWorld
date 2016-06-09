@@ -15,8 +15,8 @@ img {
 
 section {
     margin-top: 0px;
-    margin-right:200px ;
-    margin-left: 200px ;
+    margin-right:250px ;
+    margin-left: 250px ;
     margin-bottom: 75px;
     text-align: center;
     background-color: #F0F2F5;
@@ -50,4 +50,8 @@ form {
   margin-left: 100px;
   display:inline-block;
   padding-top: -100px;
+}
+#nextButton {
+  height: 35px;
+  width: 35px;
 }
