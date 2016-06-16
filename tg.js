@@ -1,4 +1,5 @@
 $(document).ready(function() {
+  // AM: +1 the questions as objects structure
   // write code to set global variables for questions + sets htmml elements to interact with dom.
   var quiz = [
     {
@@ -67,6 +68,8 @@ $(document).ready(function() {
 
   ]
   var answers = [];
+
+  // AM: What does this line do?
   answers.push(undefined);
   var userAnswers = [];
   var counter = 0;
@@ -74,6 +77,7 @@ $(document).ready(function() {
 
   placeNewQuestion();
 
+  // Instead of using the variable name "a" I would use something like "e" or "evt", something indicating that it represents "event."
   var pushEverything = pushQNA.nextButton.click(function(a){
     a.preventDefault()
     // console.log(counter,quiz.length);
@@ -86,6 +90,7 @@ $(document).ready(function() {
     }
   });
 
+  // AM: +1 the counter system
   function placeNewQuestion(){
     var moveHead = pushQNA.questionBoxOne.html(quiz[counter].questionHead);
     var moveBody = pushQNA.questionBoxTwo.html(quiz[counter].questionBody);
@@ -97,6 +102,7 @@ $(document).ready(function() {
   }
 
   function checkAnswer(){
+    // AM: Nice use of pulling in radio button values to check answers.
     var userInput = $("input[type=radio]:checked").val();
     var correctAnswer = quiz[counter].correctAnswer;
 
@@ -107,7 +113,8 @@ $(document).ready(function() {
     if (userInput == correctAnswer){
       console.log(tally)
       tally +=1;
-      debugger;
+      // AM: Remove debugger statements from the master branch of your project submission.
+      // debugger;
     };
   }
   function displayWinner() {
