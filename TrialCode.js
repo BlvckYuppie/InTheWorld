@@ -1,3 +1,5 @@
+// AM: Do you end up doing anything with this file? If not, you should remove it from your master branch. You can place it in a separate branch if you'd like to keep it.
+
 $(document).ready(function() {
   // write code to set global variables for questions + sets htmml elements to interact with dom.
   var quiz = [
