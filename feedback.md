@@ -10,7 +10,9 @@ I see you've got a wireframe in your repo, but there's is little documentation b
 **2: Performing**
 >App functions with minimal or no errors and is deployed on github pages
 
-I dig the app! It's a fully functional trivia game that keeps track of your score and displays a particular ending depending on that score. You've got it deployed too. Some additional features you can think about now are adding a timer, displaying a score and giving the user the option to restart the game.
+I dig the app! It's a fully functional trivia game that keeps track of your score and displays a particular ending depending on that score. Some additional features you can think about now are adding a timer, displaying a score and giving the user the option to restart the game.
+
+I can't seem to load your deployed app -- it causes my browser to crash. Might be stuck in an infinite loop or something. Is there anything about your `gh-pages` Javascript that's different from your master?
 
 ## Code Quality
 **1: Progressing**
